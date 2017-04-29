@@ -18,8 +18,8 @@
     "homepage": "http://framework.com",
     "support": {
         "email": "support@framework.com",
-        "issues": "https://github.com/framework/core/issues",
-        "source": "https://github.com/framework/core",
+        "issues": "https://github.com/framework/collection/issues",
+        "source": "https://github.com/framework/collection",
         "docs": "http://docs.framework.com"
     },
     "scripts": {
