@@ -23,7 +23,6 @@ class Status extends Enum
     const ERROR = 1;
 
     /**
-     * @internal
      * @since 0.1.0
      * @var array
      */

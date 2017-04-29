@@ -20,14 +20,12 @@ use ReflectionClass;
 abstract class Enum
 {
     /**
-     * @internal
      * @since 0.1.0
      * @var mixed
      */
     protected $value;
 
     /**
-     * @internal
      * @since 0.1.0
      * @var array
      */
