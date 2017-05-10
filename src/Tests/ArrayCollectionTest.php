@@ -20,62 +20,55 @@ use PHPUnit\Framework\TestCase;
  */
 class ArrayCollectionTest extends TestCase
 {
-    protected $exampleStore1 = [
-        'key' => 'value',
-        'nested' => [
-            'key' => 'value'
-        ],
-        'list' => [
-            'one',
-            'two',
-            'three'
-        ]
-    ];
+    /**
+     * @since 0.1.0
+     * @var array
+     */
+    protected $exampleStore1;
 
-    protected $exampleStore2 = [
-        'key' => 'new value',
-        'nested' => [
-            'key' => 'new value'
-        ],
-        'list' => [
-            'four'
-        ]
-    ];
+    /**
+     * @since 0.1.0
+     * @var array
+     */
+    protected $exampleStore2;
 
-    protected $mergedExampleStore1And2 = [
-        'key' => 'new value',
-        'nested' => [
-            'key' => 'new value'
-        ],
-        'list' => [
-            'four'
-        ]
-    ];
+    /**
+     * @since 0.1.0
+     * @var array
+     */
+    protected $mergedExampleStore1And2;
 
-    protected $mergedExampleStore1And2Indexed = [
-        'key' => 'new value',
-        'nested' => [
-            'key' => 'new value'
-        ],
-        'list' => [
-            'one',
-            'two',
-            'three',
-            'four'
-        ]
-    ];
+    /**
+     * @since 0.1.0
+     * @var array
+     */
+    protected $mergedExampleStore1And2Indexed;
 
-    protected $mergedExampleStore1And2AtNew = [
-        'key' => 'value',
-        'nested' => [
-            'key' => 'value'
-        ],
-        'list' => [
-            'one',
-            'two',
-            'three'
-        ],
-        'new' => [
+    /**
+     * @since 0.1.0
+     * @var array
+     */
+    protected $mergedExampleStore1And2AtNew;
+
+    /**
+     * @since 0.1.0
+     * @before
+     */
+    public function setup(): void
+    {
+        $this->exampleStore1 = [
+            'key' => 'value',
+            'nested' => [
+                'key' => 'value'
+            ],
+            'list' => [
+                'one',
+                'two',
+                'three'
+            ]
+        ];
+
+        $this->exampleStore2 = [
             'key' => 'new value',
             'nested' => [
                 'key' => 'new value'
@@ -83,9 +76,52 @@ class ArrayCollectionTest extends TestCase
             'list' => [
                 'four'
             ]
-        ]
-    ];
+        ];
 
+        $this->mergedExampleStore1And2 = [
+            'key' => 'new value',
+            'nested' => [
+                'key' => 'new value'
+            ],
+            'list' => [
+                'four'
+            ]
+        ];
+
+        $this->mergedExampleStore1And2Indexed = [
+            'key' => 'new value',
+            'nested' => [
+                'key' => 'new value'
+            ],
+            'list' => [
+                'one',
+                'two',
+                'three',
+                'four'
+            ]
+        ];
+
+        $this->mergedExampleStore1And2AtNew = [
+            'key' => 'value',
+            'nested' => [
+                'key' => 'value'
+            ],
+            'list' => [
+                'one',
+                'two',
+                'three'
+            ],
+            'new' => [
+                'key' => 'new value',
+                'nested' => [
+                    'key' => 'new value'
+                ],
+                'list' => [
+                    'four'
+                ]
+            ]
+        ];
+    }
 
     /**
      * @since 0.1.0
