@@ -23,6 +23,16 @@ class ConfigurationCollectionTest extends TestCase
     /**
      * @since 0.1.0
      * @test
+     * @coversNothing
+     */
+    public function shouldImplementCollectionInterface(): void
+    {
+        $this->assertArrayHasKey('Framework\Collection\CollectionInterface', class_implements(ConfigurationCollection::class));
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
      * @covers ::set
      */
     public function shouldSetTheGivenNestedKey()
