@@ -265,8 +265,7 @@ class ArrayCollectionTest extends TestCase
         ];
         $collection = new ArrayCollection($store);
 
-        $one = $collection->take(1);
-        $this->assertEquals(['one' => 1], $one);
+        $this->assertEquals(['one' => 1], $collection->take(1));
         $this->assertEquals($store, $collection->take(3));
         $this->assertEmpty($collection->take(0));
     }
@@ -372,6 +371,7 @@ class ArrayCollectionTest extends TestCase
         $this->assertFalse($collection->has('two'));
         $this->assertFalse($collection->has(2));
     }
+
     /**
      * @since 0.1.0
      * @test
