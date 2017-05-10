@@ -52,6 +52,19 @@ class ArrayCollectionTest extends TestCase
         ]
     ];
 
+    protected $mergedExampleStore1And2Indexed = [
+        'key' => 'new value',
+        'nested' => [
+            'key' => 'new value'
+        ],
+        'list' => [
+            'one',
+            'two',
+            'three',
+            'four'
+        ]
+    ];
+
     protected $mergedExampleStore1And2AtNew = [
         'key' => 'value',
         'nested' => [
@@ -445,6 +458,21 @@ class ArrayCollectionTest extends TestCase
         $collection1->merge($collection2);
 
         $this->assertEquals($this->mergedExampleStore1And2, $collection1->all());
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::merge
+     */
+    public function shouldMergeIndexedArrays(): void
+    {
+        $collection1 = new ArrayCollection($this->exampleStore1);
+        $collection2 = new ArrayCollection($this->exampleStore2);
+
+        $collection1->merge($collection2, null, true);
+
+        $this->assertEquals($this->mergedExampleStore1And2Indexed, $collection1->all());
     }
 
     /**
