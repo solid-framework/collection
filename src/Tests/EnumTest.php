@@ -27,7 +27,7 @@ class EnumTest extends TestCase
      * @covers ::values
      * @covers ::getConstantFromValue
      */
-    public function shouldBeInstantiableWithValidValues()
+    public function shouldBeInstantiableWithValidValues(): void
     {
         new Status(Status::SUCCESS);
         new Status(Status::WARNING);
@@ -43,7 +43,7 @@ class EnumTest extends TestCase
      * @covers ::__construct
      * @expectedException \InvalidArgumentException
      */
-    public function shouldThrowExceptionIfInvalidValueIsGiven()
+    public function shouldThrowExceptionIfInvalidValueIsGiven(): void
     {
         new Status(9);
     }
@@ -53,7 +53,7 @@ class EnumTest extends TestCase
      * @test
      * @covers ::getValue
      */
-    public function shouldReturnTheConstantValue()
+    public function shouldReturnTheConstantValue(): void
     {
         $statusSuccess = new Status(Status::SUCCESS);
         $statusError = new Status(Status::ERROR);
@@ -67,7 +67,7 @@ class EnumTest extends TestCase
      * @test
      * @covers ::enum
      */
-    public function shouldReturnAllConstantNames()
+    public function shouldReturnAllConstantNames(): void
     {
         $this->assertEquals(['SUCCESS', 'WARNING', 'ERROR'], Status::enum());
     }
@@ -77,7 +77,7 @@ class EnumTest extends TestCase
      * @test
      * @covers ::values
      */
-    public function shouldReturnAllConstantValues()
+    public function shouldReturnAllConstantValues(): void
     {
         $this->assertEquals(['SUCCESS', 'WARNING', 1], Status::values());
     }
@@ -87,7 +87,7 @@ class EnumTest extends TestCase
      * @test
      * @covers ::__toString
      */
-    public function shouldReturnConstantNameWhenCastToString()
+    public function shouldReturnConstantNameWhenCastToString(): void
     {
         $statusError = new Status(Status::ERROR);
         $this->assertEquals('ERROR', (string) $statusError);
@@ -98,7 +98,7 @@ class EnumTest extends TestCase
      * @test
      * @covers ::__toString
      */
-    public function shouldReturnStringValueIfExistsWhenCastToString()
+    public function shouldReturnStringValueIfExistsWhenCastToString(): void
     {
         $statusWarning = new Status(Status::WARNING);
         $this->assertEquals('This is just a warning!', (string) $statusWarning);

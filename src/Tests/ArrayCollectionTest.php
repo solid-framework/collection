@@ -128,7 +128,7 @@ class ArrayCollectionTest extends TestCase
      * @test
      * @coversNothing
      */
-    public function shouldImplementCollectionInterface()
+    public function shouldImplementCollectionInterface(): void
     {
         $this->assertArrayHasKey('Framework\Collection\CollectionInterface', class_implements(ArrayCollection::class));
     }
@@ -139,7 +139,7 @@ class ArrayCollectionTest extends TestCase
      * @covers ::__construct
      * @covers ::all
      */
-    public function shouldProvideDefaultEmptyStore()
+    public function shouldProvideDefaultEmptyStore(): void
     {
         $collection = new ArrayCollection;
 
@@ -152,7 +152,7 @@ class ArrayCollectionTest extends TestCase
      * @covers ::__construct
      * @covers ::all
      */
-    public function shouldAcceptIndexedStore()
+    public function shouldAcceptIndexedStore(): void
     {
         $store = ['one', 'two', 'three'];
         $collection = new ArrayCollection($store);
@@ -166,7 +166,7 @@ class ArrayCollectionTest extends TestCase
      * @covers ::__construct
      * @covers ::all
      */
-    public function shouldAcceptAssocStore()
+    public function shouldAcceptAssocStore(): void
     {
         $store = [
             'one' => 1,
@@ -184,7 +184,7 @@ class ArrayCollectionTest extends TestCase
      * @covers ::add
      * @covers ::all
      */
-    public function shouldAddItemsToTheCollection()
+    public function shouldAddItemsToTheCollection(): void
     {
         $collection = new ArrayCollection;
 
@@ -211,7 +211,7 @@ class ArrayCollectionTest extends TestCase
      * @covers ::set
      * @covers ::all
      */
-    public function shouldSetItemsInTheCollection()
+    public function shouldSetItemsInTheCollection(): void
     {
         $collection = new ArrayCollection([
             'one',
@@ -238,7 +238,7 @@ class ArrayCollectionTest extends TestCase
      * @covers ::clear
      * @covers ::all
      */
-    public function shouldClearTheCollection()
+    public function shouldClearTheCollection(): void
     {
         $collection = new ArrayCollection(['item']);
 
@@ -254,7 +254,7 @@ class ArrayCollectionTest extends TestCase
      * @test
      * @covers ::getIterator
      */
-    public function shouldReturnAValidIterator()
+    public function shouldReturnAValidIterator(): void
     {
         $store = [
             'one',
@@ -273,7 +273,7 @@ class ArrayCollectionTest extends TestCase
      * @test
      * @covers ::count
      */
-    public function shouldReturnTheCorrectCount()
+    public function shouldReturnTheCorrectCount(): void
     {
         $store = [
             'one',
@@ -292,7 +292,7 @@ class ArrayCollectionTest extends TestCase
      * @covers ::take
      * @covers ::slice
      */
-    public function shouldTakeCorrectAmountOfItems()
+    public function shouldTakeCorrectAmountOfItems(): void
     {
         $store = [
             'one' => 1,
@@ -311,7 +311,7 @@ class ArrayCollectionTest extends TestCase
      * @test
      * @covers ::slice
      */
-    public function shouldSliceCorrectly()
+    public function shouldSliceCorrectly(): void
     {
         $store = [
             'one' => 1,
@@ -331,7 +331,7 @@ class ArrayCollectionTest extends TestCase
      * @test
      * @covers ::keys
      */
-    public function shouldReturnTheCollectionKeys()
+    public function shouldReturnTheCollectionKeys(): void
     {
         $store = [
             'one' => 1,
@@ -348,7 +348,7 @@ class ArrayCollectionTest extends TestCase
      * @test
      * @covers ::values
      */
-    public function shouldReturnTheCollectionValues()
+    public function shouldReturnTheCollectionValues(): void
     {
         $store = [
             'one' => 1,
@@ -365,7 +365,7 @@ class ArrayCollectionTest extends TestCase
      * @test
      * @covers ::first
      */
-    public function shouldReturnTheFirstItemValueInTheCollection()
+    public function shouldReturnTheFirstItemValueInTheCollection(): void
     {
         $collection = new ArrayCollection([
             'one' => 1,
@@ -381,7 +381,7 @@ class ArrayCollectionTest extends TestCase
      * @test
      * @covers ::has
      */
-    public function shouldDetermineIfAKeyExists()
+    public function shouldDetermineIfAKeyExists(): void
     {
         $collection = new ArrayCollection([
             'one' => 1,
@@ -397,7 +397,7 @@ class ArrayCollectionTest extends TestCase
      * @test
      * @covers ::has
      */
-    public function shouldDetermineIfAKeyDoesNotExists()
+    public function shouldDetermineIfAKeyDoesNotExists(): void
     {
         $collection = new ArrayCollection([
             'one' => 1,
@@ -413,7 +413,7 @@ class ArrayCollectionTest extends TestCase
      * @test
      * @covers ::contains
      */
-    public function shouldDetermineIfAValueExists()
+    public function shouldDetermineIfAValueExists(): void
     {
         $collection = new ArrayCollection([
             'one' => 1,
@@ -435,7 +435,7 @@ class ArrayCollectionTest extends TestCase
      * @test
      * @covers ::get
      */
-    public function shouldReturnTheValueAtTheGivenKey()
+    public function shouldReturnTheValueAtTheGivenKey(): void
     {
         $store = [
             'one' => 1,
@@ -453,7 +453,7 @@ class ArrayCollectionTest extends TestCase
      * @test
      * @covers ::get
      */
-    public function shouldReturnNullIfKeyIsNotFound()
+    public function shouldReturnNullIfKeyIsNotFound(): void
     {
         $this->assertNull((new ArrayCollection)->get('three'));
     }
@@ -463,7 +463,7 @@ class ArrayCollectionTest extends TestCase
      * @test
      * @covers ::get
      */
-    public function shouldReturnDefaultValueIfGiven()
+    public function shouldReturnDefaultValueIfGiven(): void
     {
         $this->assertEquals(3, (new ArrayCollection)->get('three', 3));
     }
@@ -473,7 +473,7 @@ class ArrayCollectionTest extends TestCase
      * @test
      * @covers ::remove
      */
-    public function shouldRemoveTheGivenValue()
+    public function shouldRemoveTheGivenValue(): void
     {
         $collection = new ArrayCollection(['key' => 'value']);
         $collection->remove('key');
@@ -486,7 +486,7 @@ class ArrayCollectionTest extends TestCase
      * @test
      * @covers ::merge
      */
-    public function shouldMergeTheGivenCollection()
+    public function shouldMergeTheGivenCollection(): void
     {
         $collection1 = new ArrayCollection($this->exampleStore1);
         $collection2 = new ArrayCollection($this->exampleStore2);
@@ -516,7 +516,7 @@ class ArrayCollectionTest extends TestCase
      * @test
      * @covers ::merge
      */
-    public function shouldMergeTheGivenCollectionAtTheGivenKey()
+    public function shouldMergeTheGivenCollectionAtTheGivenKey(): void
     {
         $collection1 = new ArrayCollection($this->exampleStore1);
         $collection2 = new ArrayCollection($this->exampleStore2);

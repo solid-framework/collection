@@ -35,7 +35,7 @@ class ConfigurationCollectionTest extends TestCase
      * @test
      * @covers ::set
      */
-    public function shouldSetTheGivenNestedKey()
+    public function shouldSetTheGivenNestedKey(): void
     {
         $collection = new ConfigurationCollection;
 
@@ -63,7 +63,7 @@ class ConfigurationCollectionTest extends TestCase
      * @test
      * @covers ::has
      */
-    public function shouldBeAbleToTellIfANestedKeyExists()
+    public function shouldBeAbleToTellIfANestedKeyExists(): void
     {
         $collection = new ConfigurationCollection([
             'key' => 'value',
@@ -91,7 +91,7 @@ class ConfigurationCollectionTest extends TestCase
      * @test
      * @covers ::get
      */
-    public function shouldReturnNestedValue()
+    public function shouldReturnNestedValue(): void
     {
         $collection = new ConfigurationCollection([
             'key' => 'value',
@@ -116,7 +116,7 @@ class ConfigurationCollectionTest extends TestCase
      * @test
      * @covers ::get
      */
-    public function shouldReturnNullIfKeyIsNotFound()
+    public function shouldReturnNullIfKeyIsNotFound(): void
     {
         $collection = new ConfigurationCollection;
 
@@ -128,7 +128,7 @@ class ConfigurationCollectionTest extends TestCase
      * @test
      * @covers ::get
      */
-    public function shouldReturnGivenDefaultValueIfKeyIsNotFound()
+    public function shouldReturnGivenDefaultValueIfKeyIsNotFound(): void
     {
         $collection = new ConfigurationCollection;
 
