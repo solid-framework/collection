@@ -262,10 +262,13 @@ class ArrayCollectionTest extends TestCase
             'three' => 3
         ];
         $collection = new ArrayCollection($store);
+        $result = [];
 
         foreach ($collection as $key => $value) {
-            $this->assertEquals($store[$key], $value);
+            $result[$key] = $value;
         }
+
+        $this->assertEquals($store, $result);
     }
 
     /**
