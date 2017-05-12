@@ -11,6 +11,8 @@ namespace Framework\Collection;
 
 use ArrayIterator;
 use Framework\Support\Arr;
+use ReflectionFunction;
+use ReflectionMethod;
 use Traversable;
 
 /**
@@ -210,10 +212,98 @@ class ArrayCollection implements CollectionInterface
     /**
      * @api
      * @since 0.1.0
+     * @param callable $callback
+     * @return ReadableCollectionInterface
+     */
+    public function map(callable $callback): ReadableCollectionInterface
+    {
+        $store = [];
+        $numberOfParameters = $this->getParameterCount($callback, 2);
+
+        foreach ($this->store as $key => $value) {
+            $store[] = $callback(...array_slice([$value, $key], 0, $numberOfParameters));
+        }
+
+        return new static($store);
+    }
+
+    /**
+     * @api
+     * @since 0.1.0
+     * @param callable $callback
+     * @return ReadableCollectionInterface
+     */
+    public function filter(callable $callback): ReadableCollectionInterface
+    {
+        $store = [];
+        $numberOfParameters = $this->getParameterCount($callback, 2);
+
+        foreach ($this->store as $key => $value) {
+            if ($callback(...array_slice([$value, $key], 0, $numberOfParameters))) {
+                $store[is_numeric($key) ? count($store) : $key] = $value;
+            }
+        }
+
+        return new static($store);
+    }
+
+    /**
+     * @api
+     * @since 0.1.0
+     * @param callable $callback
+     * @param mixed    $initialValue
+     * @return mixed
+     */
+    public function reduce(callable $callback, $initialValue = null)
+    {
+        $result = $initialValue;
+        $numberOfParameters = $this->getParameterCount($callback, 4);
+
+        foreach ($this->store as $key => $value) {
+            $result = $callback(...array_slice([$result, $value, $key, $this], 0, $numberOfParameters));
+        }
+
+        return $result;
+    }
+
+    /**
+     * @api
+     * @since 0.1.0
+     * @param string $glue
+     * @return string
+     */
+    public function join(string $glue): string
+    {
+        return implode($glue, $this->store);
+    }
+
+    /**
+     * @api
+     * @since 0.1.0
      * @return Traversable
      */
     public function getIterator(): Traversable
     {
         return new ArrayIterator($this->store);
+    }
+
+    /**
+     * @since 0.1.0
+     * @param callable $callback
+     * @param int      $max
+     * @return int
+     */
+    protected function getParameterCount(callable $callback, int $max): int
+    {
+        $reflection = is_array($callback) ?
+            new ReflectionMethod(reset($callback), end($callback)) :
+            new ReflectionFunction($callback);
+        $numberOfParameters = $reflection->getNumberOfParameters();
+
+        if ($numberOfParameters === 0 || $reflection->isVariadic()) {
+            return $max;
+        }
+
+        return $numberOfParameters;
     }
 }

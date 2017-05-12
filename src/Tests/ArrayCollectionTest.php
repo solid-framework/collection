@@ -10,6 +10,7 @@
 namespace Framework\Collection\Tests;
 
 use Framework\Collection\ArrayCollection;
+use Framework\Collection\ReadableCollectionInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -527,5 +528,348 @@ class ArrayCollectionTest extends TestCase
         $collection1->merge($collection2, 'new');
 
         $this->assertEquals($this->mergedExampleStore1And2AtNew, $collection1->all());
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::map
+     * @covers ::getParameterCount
+     */
+    public function mapShouldPassCorrectParametersToCallback(): void
+    {
+        $collection = new ArrayCollection(['item-1', 'item-2', 'item' => 3]);
+
+        $mapMock = $this->getMockBuilder('stdClass')
+            ->setMethods(['map'])
+            ->getMock();
+
+        $mapMock->expects($this->exactly(3))
+            ->method('map')
+            ->withConsecutive(
+                [$this->equalTo('item-1'), $this->equalTo(0)],
+                [$this->equalTo('item-2'), $this->equalTo(1)],
+                [$this->equalTo(3), $this->equalTo('item')]
+            );
+
+        $collection->map([$mapMock, 'map']);
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::map
+     * @covers ::getParameterCount
+     */
+    public function mapShouldAllowCallbacksWithSingleParameter(): void
+    {
+        $collection = new ArrayCollection(['item-1']);
+
+        $collection->map(function ($item) {
+            $this->assertSame('item-1', $item);
+        });
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::map
+     * @covers ::getParameterCount
+     */
+    public function mapShouldAllowVariadicCallbacks(): void
+    {
+        $collection = new ArrayCollection(['item-1']);
+
+        $collection->map(function (...$parameters) {
+            $this->assertEquals(['item-1', 0], $parameters);
+        });
+
+        $collection->map(function ($item, ...$parameters) {
+            $this->assertSame('item-1', $item);
+            $this->assertEquals([0], $parameters);
+        });
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::map
+     * @covers ::getParameterCount
+     */
+    public function mapShouldAllowCallbacksWithNoParameters(): void
+    {
+        $collection = new ArrayCollection(['item-1']);
+
+        $collection->map(function () {
+            $this->assertEquals(['item-1', 0], func_get_args());
+        });
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::map
+     * @covers ::getParameterCount
+     */
+    public function mapShouldReturnNewModifiedCollection(): void
+    {
+        $collection = new ArrayCollection(['Item 1', 'Item 2', 'Item 3']);
+
+        $this->assertEquals(['item 1', 'item 2', 'item 3'], $collection->map('strtolower')->all());
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::map
+     * @covers ::getParameterCount
+     */
+    public function mapShouldNotMutateTheOriginalCollection(): void
+    {
+        $store = ['Item 1', 'Item 2', 'Item 3'];
+        $collection = new ArrayCollection($store);
+        $collection->map('strtolower');
+
+        $this->assertEquals($store, $collection->all());
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::filter
+     * @covers ::getParameterCount
+     */
+    public function filterShouldPassCorrectParametersToCallback(): void
+    {
+        $collection = new ArrayCollection(['item-1', 'item-2', 'item' => 3]);
+
+        $filterMock = $this->getMockBuilder('stdClass')
+            ->setMethods(['filter'])
+            ->getMock();
+
+        $filterMock->expects($this->exactly(3))
+            ->method('filter')
+            ->withConsecutive(
+                [$this->equalTo('item-1'), $this->equalTo(0)],
+                [$this->equalTo('item-2'), $this->equalTo(1)],
+                [$this->equalTo(3), $this->equalTo('item')]
+            );
+
+        $collection->filter([$filterMock, 'filter']);
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::filter
+     * @covers ::getParameterCount
+     */
+    public function filterShouldAllowCallbacksWithSingleParameter(): void
+    {
+        $collection = new ArrayCollection(['item-1']);
+
+        $collection->filter(function ($item) {
+            $this->assertSame('item-1', $item);
+        });
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::filter
+     * @covers ::getParameterCount
+     */
+    public function filterShouldAllowVariadicCallbacks(): void
+    {
+        $collection = new ArrayCollection(['item-1']);
+
+        $collection->filter(function (...$parameters) {
+            $this->assertEquals(['item-1', 0], $parameters);
+        });
+
+        $collection->filter(function ($item, ...$parameters) {
+            $this->assertSame('item-1', $item);
+            $this->assertEquals([0], $parameters);
+        });
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::filter
+     * @covers ::getParameterCount
+     */
+    public function filterShouldAllowCallbacksWithNoParameters(): void
+    {
+        $collection = new ArrayCollection(['item-1']);
+
+        $collection->filter(function () {
+            $this->assertEquals(['item-1', 0], func_get_args());
+        });
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::filter
+     * @covers ::getParameterCount
+     */
+    public function filterShouldReturnNewModifiedCollection(): void
+    {
+        $collection = new ArrayCollection(['one', '2', 'three', '4']);
+
+        $this->assertEquals(['2', '4'], $collection->filter('is_numeric')->all());
+        $this->assertEmpty($collection->filter('is_array')->all());
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::filter
+     * @covers ::getParameterCount
+     */
+    public function filterShouldNotMutateTheOriginalCollection(): void
+    {
+        $store = ['Item 1', 'Item 2', 'Item 3'];
+        $collection = new ArrayCollection($store);
+        $collection->filter('is_array');
+
+        $this->assertEquals($store, $collection->all());
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::reduce
+     * @covers ::getParameterCount
+     */
+    public function reduceShouldPassCorrectParametersToCallback(): void
+    {
+        $collection = new ArrayCollection(['item-1', 'item-2', 'item' => 3]);
+
+        $reduceMock = $this->getMockBuilder('stdClass')
+            ->setMethods(['reduce'])
+            ->getMock();
+
+        $reduceMock->expects($this->exactly(3))
+            ->method('reduce')
+            ->withConsecutive(
+                [$this->equalTo(null), $this->equalTo('item-1'), $this->equalTo(0), $this->equalTo($collection)],
+                [$this->equalTo(null), $this->equalTo('item-2'), $this->equalTo(1), $this->equalTo($collection)],
+                [$this->equalTo(null), $this->equalTo(3), $this->equalTo('item'), $this->equalTo($collection)]
+            );
+
+        $collection->reduce([$reduceMock, 'reduce']);
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::reduce
+     * @covers ::getParameterCount
+     */
+    public function reduceShouldAllowCallbacksWithSingleParameter(): void
+    {
+        $collection = new ArrayCollection(['item-1']);
+
+        $collection->reduce('is_array');
+
+        // Succeeds if no errors are thrown.
+        $this->assertTrue(true);
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::reduce
+     * @covers ::getParameterCount
+     */
+    public function reduceShouldAllowVariadicCallbacks(): void
+    {
+        $collection = new ArrayCollection(['item-1']);
+
+        $collection->reduce(function (...$parameters) use ($collection) {
+            $this->assertEquals([null, 'item-1', 0, $collection], $parameters);
+        });
+
+        $collection->reduce(function ($accumulator, $item, ...$parameters) use ($collection) {
+            $this->assertNull($accumulator);
+            $this->assertSame('item-1', $item);
+            $this->assertEquals([0, $collection], $parameters);
+        });
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::reduce
+     * @covers ::getParameterCount
+     */
+    public function reduceShouldAllowCallbacksWithNoParameters(): void
+    {
+        $collection = new ArrayCollection(['item-1']);
+
+        $collection->reduce(function () use ($collection) {
+            $this->assertEquals([null, 'item-1', 0, $collection], func_get_args());
+        });
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::reduce
+     * @covers ::getParameterCount
+     */
+    public function reduceShouldReturnAccumulatedResult(): void
+    {
+        $collection = new ArrayCollection(['one', 'two', 'three']);
+
+        $this->assertFalse($collection->reduce('is_array'));
+        $this->assertEquals(
+            'one, two and three',
+            $collection->reduce(function (
+                string $sentence,
+                string $word,
+                int $i,
+                ReadableCollectionInterface $collection
+            ) {
+                if ($i === 0) {
+                    $sentence .= $word;
+                } elseif ($i === $collection->count() - 1) {
+                    $sentence .= " and {$word}";
+                } else {
+                    $sentence .= ", {$word}";
+                }
+
+                return $sentence;
+            }, '')
+        );
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::reduce
+     * @covers ::getParameterCount
+     */
+    public function reduceShouldNotMutateTheOriginalCollection(): void
+    {
+        $store = ['one', 'two', 'three'];
+        $collection = new ArrayCollection($store);
+        $collection->reduce('is_array');
+
+        $this->assertEquals($store, $collection->all());
+    }
+
+    /**
+     * @since 0.1.0
+     * @test
+     * @covers ::join
+     */
+    public function shouldReturnJoinedString(): void
+    {
+        $collection = new ArrayCollection(['one', 'two', 'three']);
+
+        $this->assertSame('one, two, three', $collection->join(', '));
     }
 }

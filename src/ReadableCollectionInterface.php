@@ -90,6 +90,39 @@ interface ReadableCollectionInterface extends IteratorAggregate
     /**
      * @api
      * @since 0.1.0
+     * @param callable $callback
+     * @return ReadableCollectionInterface
+     */
+    public function map(callable $callback): ReadableCollectionInterface;
+
+    /**
+     * @api
+     * @since 0.1.0
+     * @param callable $callback
+     * @return ReadableCollectionInterface
+     */
+    public function filter(callable $callback): ReadableCollectionInterface;
+
+    /**
+     * @api
+     * @since 0.1.0
+     * @param callable $callback
+     * @param mixed    $initialValue
+     * @return mixed
+     */
+    public function reduce(callable $callback, $initialValue);
+
+    /**
+     * @api
+     * @since 0.1.0
+     * @param string $glue
+     * @return string
+     */
+    public function join(string $glue): string;
+
+    /**
+     * @api
+     * @since 0.1.0
      * @param int|string $key
      * @param mixed      $default
      * @return mixed
