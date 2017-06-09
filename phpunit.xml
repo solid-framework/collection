@@ -22,7 +22,6 @@
          timeoutForLargeTests="60"
          verbose="false"
          beStrictAboutTestsThatDoNotTestAnything="true"
-         checkForUnintantionallyCoveredCode="true"
          beStrictAboutOutputDuringTests="true">
     <testsuites>
         <testsuite name="Framework Collection">
@@ -37,7 +36,4 @@
             </exclude>
         </whitelist>
     </filter>
-    <logging>
-        <log type="coverage-text" target="php://stdout" showOnlySummary="true"></log>
-    </logging>
 </phpunit>
