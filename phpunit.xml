@@ -24,7 +24,7 @@
          beStrictAboutTestsThatDoNotTestAnything="true"
          beStrictAboutOutputDuringTests="true">
     <testsuites>
-        <testsuite name="Framework Collection">
+        <testsuite name="Solid Collection">
             <directory>src</directory>
         </testsuite>
     </testsuites>

@@ -7,16 +7,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Framework\Collection\Tests;
+namespace Solid\Collection\Tests;
 
-use Framework\Collection\Tests\Fixtures\Status;
+use Solid\Collection\Tests\Fixtures\Status;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @package Framework\Collection\Tests
- * @author Martin Pettersson <martin@framework.com>
+ * @package Solid\Collection\Tests
+ * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
- * @coversDefaultClass Framework\Collection\Enum
+ * @coversDefaultClass Solid\Collection\Enum
  */
 class EnumTest extends TestCase
 {

@@ -7,13 +7,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Framework\Collection;
+namespace Solid\Collection;
 
 use IteratorAggregate;
 
 /**
- * @package Framework\Collection
- * @author Martin Pettersson <martin@framework.com>
+ * @package Solid\Collection
+ * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
  */
 interface ReadableCollectionInterface extends IteratorAggregate

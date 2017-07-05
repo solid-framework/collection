@@ -1,26 +1,29 @@
 {
-    "name": "framework/collection",
-    "description": "Description...",
-    "version": "0.1.0",
+    "name": "solid-framework/collection",
+    "description": "A module for the Solid Framework adding various collection interfaces/implementations.",
     "type": "library",
     "license": "MIT",
     "keywords": [
+        "solid",
         "framework",
-        "collection"
+        "collection",
+        "php",
+        "modular",
+        "module"
     ],
     "authors": [
         {
             "name": "Martin Pettersson",
-            "email": "martin@framework.com",
+            "email": "martin@solid-framework.com",
             "role": "Developer"
         }
     ],
-    "homepage": "http://framework.com",
+    "homepage": "http://solid-framework.com",
     "support": {
-        "email": "support@framework.com",
-        "issues": "https://github.com/framework/collection/issues",
-        "source": "https://github.com/framework/collection",
-        "docs": "http://docs.framework.com"
+        "email": "support@solid-framework.com",
+        "issues": "https://github.com/solid-framework/collection/issues",
+        "source": "https://github.com/solid-framework/collection",
+        "docs": "http://docs.solid-framework.com"
     },
     "scripts": {
         "test": "phpunit",
@@ -28,19 +31,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Framework\\Collection\\": "src"
+            "Solid\\Collection\\": "src"
         }
     },
     "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../support"
-        }
-    ],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=7.1",
-        "framework/support": "~0.1.0"
+        "solid-framework/support": "~0.1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.1",

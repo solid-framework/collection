@@ -7,16 +7,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Framework\Collection\Tests;
+namespace Solid\Collection\Tests;
 
-use Framework\Collection\ConfigurationCollection;
+use Solid\Collection\ConfigurationCollection;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @package Framework\Collection\Tests
- * @author Martin Pettersson <martin@framework.com>
+ * @package Solid\Collection\Tests
+ * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
- * @coversDefaultClass Framework\Collection\ConfigurationCollection
+ * @coversDefaultClass Solid\Collection\ConfigurationCollection
  */
 class ConfigurationCollectionTest extends TestCase
 {
@@ -27,7 +27,7 @@ class ConfigurationCollectionTest extends TestCase
      */
     public function shouldImplementCollectionInterface(): void
     {
-        $this->assertArrayHasKey('Framework\Collection\CollectionInterface', class_implements(ConfigurationCollection::class));
+        $this->assertArrayHasKey('Solid\Collection\CollectionInterface', class_implements(ConfigurationCollection::class));
     }
 
     /**

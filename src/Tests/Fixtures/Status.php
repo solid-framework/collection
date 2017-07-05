@@ -7,13 +7,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Framework\Collection\Tests\Fixtures;
+namespace Solid\Collection\Tests\Fixtures;
 
-use Framework\Collection\Enum;
+use Solid\Collection\Enum;
 
 /**
- * @package Framework\Collection\Tests\Fixtures
- * @author Martin Pettersson <martin@framework.com>
+ * @package Solid\Collection\Tests\Fixtures
+ * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
  */
 class Status extends Enum

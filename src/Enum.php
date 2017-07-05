@@ -7,14 +7,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Framework\Collection;
+namespace Solid\Collection;
 
 use InvalidArgumentException;
 use ReflectionClass;
 
 /**
- * @package Framework\Collection
- * @author Martin Pettersson <martin@framework.com>
+ * @package Solid\Collection
+ * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
  */
 abstract class Enum

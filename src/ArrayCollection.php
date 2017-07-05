@@ -7,17 +7,17 @@
  * file that was distributed with this source code.
  */
 
-namespace Framework\Collection;
+namespace Solid\Collection;
 
 use ArrayIterator;
-use Framework\Support\Arr;
 use ReflectionFunction;
 use ReflectionMethod;
+use Solid\Support\Arr;
 use Traversable;
 
 /**
- * @package Framework\Collection
- * @author Martin Pettersson <martin@framework.com>
+ * @package Solid\Collection
+ * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
  */
 class ArrayCollection implements CollectionInterface

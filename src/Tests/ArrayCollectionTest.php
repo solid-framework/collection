@@ -7,17 +7,17 @@
  * file that was distributed with this source code.
  */
 
-namespace Framework\Collection\Tests;
+namespace Solid\Collection\Tests;
 
-use Framework\Collection\ArrayCollection;
-use Framework\Collection\ReadableCollectionInterface;
+use Solid\Collection\ArrayCollection;
+use Solid\Collection\ReadableCollectionInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @package Framework\Collection\Tests
- * @author Martin Pettersson <martin@framework.com>
+ * @package Solid\Collection\Tests
+ * @author Martin Pettersson <martin@solid-framework.com>
  * @since 0.1.0
- * @coversDefaultClass Framework\Collection\ArrayCollection
+ * @coversDefaultClass Solid\Collection\ArrayCollection
  */
 class ArrayCollectionTest extends TestCase
 {
@@ -131,7 +131,7 @@ class ArrayCollectionTest extends TestCase
      */
     public function shouldImplementCollectionInterface(): void
     {
-        $this->assertArrayHasKey('Framework\Collection\CollectionInterface', class_implements(ArrayCollection::class));
+        $this->assertArrayHasKey('Solid\Collection\CollectionInterface', class_implements(ArrayCollection::class));
     }
 
     /**
