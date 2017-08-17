@@ -16,5 +16,4 @@ namespace Solid\Collection;
  */
 interface CollectionInterface extends ReadableCollectionInterface, WritableCollectionInterface
 {
-    // ...
 }

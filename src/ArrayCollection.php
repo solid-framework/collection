@@ -62,9 +62,9 @@ class ArrayCollection implements CollectionInterface
     /**
      * @api
      * @since 0.1.0
-     * @param ReadableCollectionInterface $collection
-     * @param int|string                  $key
-     * @param boolean                     $mergeIndexedArrays
+     * @param \Solid\Collection\ReadableCollectionInterface $collection
+     * @param int|string                                    $key
+     * @param boolean                                       $mergeIndexedArrays
      */
     public function merge(ReadableCollectionInterface $collection, $key = null, bool $mergeIndexedArrays = false): void
     {
@@ -213,7 +213,7 @@ class ArrayCollection implements CollectionInterface
      * @api
      * @since 0.1.0
      * @param callable $callback
-     * @return ReadableCollectionInterface
+     * @return \Solid\Collection\ReadableCollectionInterface
      */
     public function map(callable $callback): ReadableCollectionInterface
     {
@@ -231,7 +231,7 @@ class ArrayCollection implements CollectionInterface
      * @api
      * @since 0.1.0
      * @param callable $callback
-     * @return ReadableCollectionInterface
+     * @return \Solid\Collection\ReadableCollectionInterface
      */
     public function filter(callable $callback): ReadableCollectionInterface
     {
@@ -280,7 +280,7 @@ class ArrayCollection implements CollectionInterface
     /**
      * @api
      * @since 0.1.0
-     * @return Traversable
+     * @return \Traversable
      */
     public function getIterator(): Traversable
     {

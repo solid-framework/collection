@@ -34,9 +34,9 @@ interface WritableCollectionInterface
     /**
      * @api
      * @since 0.1.0
-     * @param ReadableCollectionInterface $collection
-     * @param int|string                  $key
-     * @param bool                        $mergeIndexed
+     * @param \Solid\Collection\ReadableCollectionInterface $collection
+     * @param int|string                                    $key
+     * @param bool                                          $mergeIndexed
      */
     public function merge(ReadableCollectionInterface $collection, $key = null, bool $mergeIndexed = false): void;
 

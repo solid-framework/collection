@@ -91,7 +91,7 @@ interface ReadableCollectionInterface extends IteratorAggregate
      * @api
      * @since 0.1.0
      * @param callable $callback
-     * @return ReadableCollectionInterface
+     * @return \Solid\Collection\ReadableCollectionInterface
      */
     public function map(callable $callback): ReadableCollectionInterface;
 
@@ -99,7 +99,7 @@ interface ReadableCollectionInterface extends IteratorAggregate
      * @api
      * @since 0.1.0
      * @param callable $callback
-     * @return ReadableCollectionInterface
+     * @return \Solid\Collection\ReadableCollectionInterface
      */
     public function filter(callable $callback): ReadableCollectionInterface;
 

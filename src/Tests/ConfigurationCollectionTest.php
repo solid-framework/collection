@@ -27,7 +27,10 @@ class ConfigurationCollectionTest extends TestCase
      */
     public function shouldImplementCollectionInterface(): void
     {
-        $this->assertArrayHasKey('Solid\Collection\CollectionInterface', class_implements(ConfigurationCollection::class));
+        $this->assertArrayHasKey(
+            'Solid\Collection\CollectionInterface',
+            class_implements(ConfigurationCollection::class)
+        );
     }
 
     /**
