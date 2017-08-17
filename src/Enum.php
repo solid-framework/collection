@@ -52,7 +52,7 @@ abstract class Enum
      */
     final public function __toString(): string
     {
-        return (string) array_key_exists($this->getValue(), $this->strings) ?
+        return (string)array_key_exists($this->getValue(), $this->strings) ?
             $this->strings[$this->getValue()] :
             $this->value;
     }

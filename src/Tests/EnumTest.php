@@ -90,7 +90,7 @@ class EnumTest extends TestCase
     public function shouldReturnConstantNameWhenCastToString(): void
     {
         $statusError = new Status(Status::ERROR);
-        $this->assertEquals('ERROR', (string) $statusError);
+        $this->assertEquals('ERROR', (string)$statusError);
     }
 
     /**
@@ -101,6 +101,6 @@ class EnumTest extends TestCase
     public function shouldReturnStringValueIfExistsWhenCastToString(): void
     {
         $statusWarning = new Status(Status::WARNING);
-        $this->assertEquals('This is just a warning!', (string) $statusWarning);
+        $this->assertEquals('This is just a warning!', (string)$statusWarning);
     }
 }
