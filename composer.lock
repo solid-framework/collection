@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "826babf7bab1e27a0b1c6b10eed42de9",
+    "content-hash": "a00c9aa6a53f896b865307079fcd0fd9",
     "packages": [
         {
             "name": "solid-framework/support",
@@ -1560,7 +1560,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,

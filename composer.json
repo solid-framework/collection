@@ -35,7 +35,6 @@
         }
     },
     "prefer-stable": true,
-    "minimum-stability": "dev",
     "require": {
         "php": ">=7.1",
         "solid-framework/support": "~0.1.0"
