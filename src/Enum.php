@@ -36,7 +36,7 @@ abstract class Enum
      * @since 0.1.0
      * @param mixed $value
      */
-    final public function __construct($value)
+    public function __construct($value)
     {
         if (!in_array($value, static::values())) {
             throw new InvalidArgumentException('Invalid value for enum ' . static::class . ": {$value}");
@@ -50,7 +50,7 @@ abstract class Enum
      * @since 0.1.0
      * @return string
      */
-    final public function __toString(): string
+    public function __toString(): string
     {
         return (string)array_key_exists($this->getValue(), $this->strings) ?
             $this->strings[$this->getValue()] :
@@ -62,7 +62,7 @@ abstract class Enum
      * @since 0.1.0
      * @return mixed
      */
-    final public function getValue()
+    public function getValue()
     {
         return constant("static::{$this->value}");
     }
@@ -72,7 +72,7 @@ abstract class Enum
      * @since 0.1.0
      * @return array
      */
-    final public static function enum(): array
+    public static function enum(): array
     {
         return array_keys((new ReflectionClass(static::class))->getConstants());
     }
@@ -82,7 +82,7 @@ abstract class Enum
      * @since 0.1.0
      * @return array
      */
-    final public static function values(): array
+    public static function values(): array
     {
         return array_values((new ReflectionClass(static::class))->getConstants());
     }
