@@ -18,19 +18,15 @@ use Traversable;
 /**
  * @package Solid\Collection
  * @author Martin Pettersson <martin@solid-framework.com>
- * @since 0.1.0
  */
 class ArrayCollection implements CollectionInterface
 {
     /**
-     * @since 0.1.0
      * @var array
      */
     protected $store;
 
     /**
-     * @api
-     * @since 0.1.0
      * @param array $store
      */
     public function __construct(array $store = [])
@@ -39,8 +35,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @param mixed $item
      */
     public function add($item): void
@@ -49,8 +43,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @param mixed $key
      * @param mixed $value
      */
@@ -60,8 +52,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @param \Solid\Collection\ReadableCollectionInterface $collection
      * @param int|string                                    $key
      * @param boolean                                       $mergeIndexedArrays
@@ -79,8 +69,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @param int|string $key
      */
     public function remove($key): void
@@ -88,18 +76,12 @@ class ArrayCollection implements CollectionInterface
         unset($this->store[$key]);
     }
 
-    /**
-     * @api
-     * @since 0.1.0
-     */
     public function clear(): void
     {
         $this->store = [];
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @return int
      */
     public function count(): int
@@ -108,8 +90,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @return array
      */
     public function all(): array
@@ -118,8 +98,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @param int $amount
      * @return array
      */
@@ -129,8 +107,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @param int $start
      * @param int $amount
      * @return array
@@ -141,8 +117,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @return array
      */
     public function keys(): array
@@ -151,8 +125,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @return array
      */
     public function values(): array
@@ -161,8 +133,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @return mixed
      */
     public function first()
@@ -175,8 +145,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @param int|string $key
      * @return bool
      */
@@ -186,8 +154,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @param mixed $value
      * @param bool  $strict
      * @return bool
@@ -198,8 +164,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @param int|string $key
      * @param mixed      $default
      * @return mixed
@@ -210,8 +174,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @param callable $callback
      * @return \Solid\Collection\ReadableCollectionInterface
      */
@@ -228,8 +190,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @param callable $callback
      * @return \Solid\Collection\ReadableCollectionInterface
      */
@@ -248,8 +208,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @param callable $callback
      * @param mixed    $initialValue
      * @return mixed
@@ -267,8 +225,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @param string $glue
      * @return string
      */
@@ -278,8 +234,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @return \Traversable
      */
     public function getIterator(): Traversable
@@ -288,7 +242,6 @@ class ArrayCollection implements CollectionInterface
     }
 
     /**
-     * @since 0.1.0
      * @param callable $callback
      * @param int      $max
      * @return int

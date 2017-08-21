@@ -14,13 +14,10 @@ use Solid\Support\Arr;
 /**
  * @package Solid\Collection
  * @author Martin Pettersson <martin@solid-framework.com>
- * @since 0.1.0
  */
 class ConfigurationCollection extends ArrayCollection
 {
     /**
-     * @api
-     * @since 0.1.0
      * @param mixed $key
      * @param mixed $value
      */
@@ -40,8 +37,6 @@ class ConfigurationCollection extends ArrayCollection
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @param int|string $key
      * @return bool
      */
@@ -61,8 +56,6 @@ class ConfigurationCollection extends ArrayCollection
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @param int|string $key
      * @param mixed      $default
      * @return mixed

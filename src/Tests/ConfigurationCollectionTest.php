@@ -15,13 +15,11 @@ use PHPUnit\Framework\TestCase;
 /**
  * @package Solid\Collection\Tests
  * @author Martin Pettersson <martin@solid-framework.com>
- * @since 0.1.0
  * @coversDefaultClass Solid\Collection\ConfigurationCollection
  */
 class ConfigurationCollectionTest extends TestCase
 {
     /**
-     * @since 0.1.0
      * @test
      * @coversNothing
      */
@@ -34,7 +32,6 @@ class ConfigurationCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::set
      */
@@ -62,7 +59,6 @@ class ConfigurationCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::has
      */
@@ -90,7 +86,6 @@ class ConfigurationCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::get
      */
@@ -115,7 +110,6 @@ class ConfigurationCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::get
      */
@@ -127,7 +121,6 @@ class ConfigurationCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::get
      */

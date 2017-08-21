@@ -16,43 +16,36 @@ use PHPUnit\Framework\TestCase;
 /**
  * @package Solid\Collection\Tests
  * @author Martin Pettersson <martin@solid-framework.com>
- * @since 0.1.0
  * @coversDefaultClass Solid\Collection\ArrayCollection
  */
 class ArrayCollectionTest extends TestCase
 {
     /**
-     * @since 0.1.0
      * @var array
      */
     protected $exampleStore1;
 
     /**
-     * @since 0.1.0
      * @var array
      */
     protected $exampleStore2;
 
     /**
-     * @since 0.1.0
      * @var array
      */
     protected $mergedExampleStore1And2;
 
     /**
-     * @since 0.1.0
      * @var array
      */
     protected $mergedExampleStore1And2Indexed;
 
     /**
-     * @since 0.1.0
      * @var array
      */
     protected $mergedExampleStore1And2AtNew;
 
     /**
-     * @since 0.1.0
      * @before
      */
     public function setup(): void
@@ -125,7 +118,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @coversNothing
      */
@@ -135,7 +127,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::__construct
      * @covers ::all
@@ -148,7 +139,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::__construct
      * @covers ::all
@@ -162,7 +152,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::__construct
      * @covers ::all
@@ -180,7 +169,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::add
      * @covers ::all
@@ -207,7 +195,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::set
      * @covers ::all
@@ -234,7 +221,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::clear
      * @covers ::all
@@ -251,7 +237,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::getIterator
      */
@@ -273,7 +258,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::count
      */
@@ -291,7 +275,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::take
      * @covers ::slice
@@ -311,7 +294,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::slice
      */
@@ -331,7 +313,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::keys
      */
@@ -348,7 +329,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::values
      */
@@ -365,7 +345,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::first
      */
@@ -381,7 +360,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::has
      */
@@ -397,7 +375,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::has
      */
@@ -413,7 +390,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::contains
      */
@@ -435,7 +411,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::get
      */
@@ -453,7 +428,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::get
      */
@@ -463,7 +437,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::get
      */
@@ -473,7 +446,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::remove
      */
@@ -486,7 +458,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::merge
      */
@@ -501,7 +472,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::merge
      */
@@ -516,7 +486,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::merge
      */
@@ -531,7 +500,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::map
      * @covers ::getParameterCount
@@ -556,7 +524,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::map
      * @covers ::getParameterCount
@@ -571,7 +538,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::map
      * @covers ::getParameterCount
@@ -591,7 +557,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::map
      * @covers ::getParameterCount
@@ -606,7 +571,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::map
      * @covers ::getParameterCount
@@ -619,7 +583,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::map
      * @covers ::getParameterCount
@@ -634,7 +597,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::filter
      * @covers ::getParameterCount
@@ -659,7 +621,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::filter
      * @covers ::getParameterCount
@@ -674,7 +635,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::filter
      * @covers ::getParameterCount
@@ -694,7 +654,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::filter
      * @covers ::getParameterCount
@@ -709,7 +668,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::filter
      * @covers ::getParameterCount
@@ -723,7 +681,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::filter
      * @covers ::getParameterCount
@@ -738,7 +695,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::reduce
      * @covers ::getParameterCount
@@ -763,7 +719,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::reduce
      * @covers ::getParameterCount
@@ -779,7 +734,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::reduce
      * @covers ::getParameterCount
@@ -800,7 +754,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::reduce
      * @covers ::getParameterCount
@@ -815,7 +768,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::reduce
      * @covers ::getParameterCount
@@ -847,7 +799,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::reduce
      * @covers ::getParameterCount
@@ -862,7 +813,6 @@ class ArrayCollectionTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::join
      */

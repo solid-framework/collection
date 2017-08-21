@@ -15,25 +15,20 @@ use ReflectionClass;
 /**
  * @package Solid\Collection
  * @author Martin Pettersson <martin@solid-framework.com>
- * @since 0.1.0
  */
 abstract class Enum
 {
     /**
-     * @since 0.1.0
      * @var mixed
      */
     protected $value;
 
     /**
-     * @since 0.1.0
      * @var array
      */
     protected $strings = [];
 
     /**
-     * @api
-     * @since 0.1.0
      * @param mixed $value
      */
     public function __construct($value)
@@ -46,8 +41,6 @@ abstract class Enum
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @return string
      */
     public function __toString(): string
@@ -58,8 +51,6 @@ abstract class Enum
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @return mixed
      */
     public function getValue()
@@ -68,8 +59,6 @@ abstract class Enum
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @return array
      */
     public static function enum(): array
@@ -78,8 +67,6 @@ abstract class Enum
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @return array
      */
     public static function values(): array
@@ -88,8 +75,6 @@ abstract class Enum
     }
 
     /**
-     * @api
-     * @since 0.1.0
      * @param mixed $value
      * @return string
      */

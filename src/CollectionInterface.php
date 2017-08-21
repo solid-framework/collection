@@ -12,7 +12,6 @@ namespace Solid\Collection;
 /**
  * @package Solid\Collection
  * @author Martin Pettersson <martin@solid-framework.com>
- * @since 0.1.0
  */
 interface CollectionInterface extends ReadableCollectionInterface, WritableCollectionInterface
 {

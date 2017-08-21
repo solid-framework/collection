@@ -14,7 +14,6 @@ use Solid\Collection\Enum;
 /**
  * @package Solid\Collection\Tests\Fixtures
  * @author Martin Pettersson <martin@solid-framework.com>
- * @since 0.1.0
  */
 class Status extends Enum
 {
@@ -23,7 +22,6 @@ class Status extends Enum
     const ERROR = 1;
 
     /**
-     * @since 0.1.0
      * @var array
      */
     protected $strings = [

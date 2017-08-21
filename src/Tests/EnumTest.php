@@ -15,13 +15,11 @@ use PHPUnit\Framework\TestCase;
 /**
  * @package Solid\Collection\Tests
  * @author Martin Pettersson <martin@solid-framework.com>
- * @since 0.1.0
  * @coversDefaultClass Solid\Collection\Enum
  */
 class EnumTest extends TestCase
 {
     /**
-     * @since 0.1.0
      * @test
      * @covers ::__construct
      * @covers ::values
@@ -38,7 +36,6 @@ class EnumTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::__construct
      * @expectedException \InvalidArgumentException
@@ -49,7 +46,6 @@ class EnumTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::getValue
      */
@@ -63,7 +59,6 @@ class EnumTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::enum
      */
@@ -73,7 +68,6 @@ class EnumTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::values
      */
@@ -83,7 +77,6 @@ class EnumTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::__toString
      */
@@ -94,7 +87,6 @@ class EnumTest extends TestCase
     }
 
     /**
-     * @since 0.1.0
      * @test
      * @covers ::__toString
      */
