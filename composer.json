@@ -37,7 +37,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.1",
-        "solid-framework/support": "~0.1.0"
+        "solid-framework/support": "~0.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.1",

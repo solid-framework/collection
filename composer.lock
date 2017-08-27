@@ -4,26 +4,27 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a00c9aa6a53f896b865307079fcd0fd9",
+    "content-hash": "edf07d0a9bdf0cde7d85a13c77186cbd",
     "packages": [
         {
             "name": "solid-framework/support",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/solid-framework/support.git",
-                "reference": "7769ac4fe104e2317c6b96aaaa6d8a3275fbcc62"
+                "reference": "e12c3e481105dadca445cd13c299c88196c6d280"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solid-framework/support/zipball/7769ac4fe104e2317c6b96aaaa6d8a3275fbcc62",
-                "reference": "7769ac4fe104e2317c6b96aaaa6d8a3275fbcc62",
+                "url": "https://api.github.com/repos/solid-framework/support/zipball/e12c3e481105dadca445cd13c299c88196c6d280",
+                "reference": "e12c3e481105dadca445cd13c299c88196c6d280",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
             },
             "require-dev": {
+                "php-mock/php-mock-phpunit": "2.0.0",
                 "phpunit/phpunit": "^6.1",
                 "squizlabs/php_codesniffer": "^3.0"
             },
@@ -54,7 +55,7 @@
                 "solid",
                 "support"
             ],
-            "time": "2017-07-05T11:38:23+00:00"
+            "time": "2017-08-27T22:52:10+00:00"
         }
     ],
     "packages-dev": [
