@@ -21,7 +21,7 @@ interface WritableCollectionInterface
     public function add($item): void;
 
     /**
-     * @param mixed $key
+     * @param int|string $key
      * @param mixed $value
      */
     public function set($key, $value): void;
