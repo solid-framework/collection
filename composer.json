@@ -34,6 +34,11 @@
             "Solid\\Collection\\": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Solid\\Collection\\Tests\\": "tests"
+        }
+    },
     "prefer-stable": true,
     "require": {
         "php": ">=7.1",
